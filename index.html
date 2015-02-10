@@ -1,0 +1,44 @@
+<html>
+<header>
+<title>Welcome to the EV3 Controller</title>
+</header>
+<body>
+<h1>EV3 Control</h1>
+Welcome to the Rogers WebController<br><hr>
+
+<form method="POST" action="/motor">
+<label>Motor Control: </label><br><hr>
+Motor A <input type="range" name="Speed0" min="-100" max="100" value="50"><br>
+Motor B <input type="range" name="Speed1" min="-100" max="100" value="0"><br>
+Motor C <input type="range" name="Speed2" min="-100" max="100" value="0"><br>
+Motor D <input type="range" name="Speed3" min="-100" max="100" value="0"><br>
+<select name="direction">
+<option value="CL">clockwise</option>
+<option value="CCL">counter-clockwise</option>
+</select>
+<input type="submit" name="cmd" value="run"/>
+<input type="submit" name="cmd" value="stop"/>
+</form>
+
+<form method="POST" action="/led">
+<label>LED Control: </label><br><hr>
+Left Red <input type="range" name="LEDLR" min="0" max="100" value="10"><br>
+Right Red <input type="range" name="LEDRR" min="0" max="100" value="10"><br>
+Left Green <input type="range" name="LEDLG" min="0" max="100" value="10"><br>
+Right Green <input type="range" name="LEDRG" min="0" max="100" value="10"><br>
+<input type="submit" name="cmd" value="update"/>
+</form>
+
+<form method="POST" action="/BotSpeak">
+<label>BotSpeak Command(s): </label><br><hr>
+<textarea name="BotSpeak" rows="10" cols="30">
+SET PWM[0],55
+WAIT 1000
+SET PWM[0],0
+</textarea>
+<br>
+<input type="submit" name="RunBS" value="update"/>
+</form>
+
+</body>
+</html>
