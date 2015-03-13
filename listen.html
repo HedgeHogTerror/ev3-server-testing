@@ -1,0 +1,23 @@
+
+<html>
+<head></head>
+<body>
+
+<div id="current_command" value=""></div>
+</body>
+<script src="http://cdn.pubnub.com/pubnub.js">
+(function(){
+var current = PUBNUB.$('current_command');
+var pubnub = PUBNUB.init({
+subscribe_key: 'sub-c-36f122f4-bf93-11e4-95f4-02ee2ddab7fe',
+publish_key: 'pub-c-77cedf86-6917-4c34-8245-8c89b2f5bf8f'
+});
+
+pubnub.subscribe({
+    channel: 'command',
+    message: current
+});
+});
+</script>
+
+</html>
